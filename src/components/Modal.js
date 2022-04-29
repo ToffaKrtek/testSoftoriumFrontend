@@ -5,10 +5,14 @@ class Modal extends React.Component {
     super(props);
     this.state = { answer: props.answer, open: props.open };
   }
+  componentDidUpdate(prevProps){
+    console.log("ddd")
+    if (this.props.open !== this.state.open) {
+      this.setState({open: this.props.open, answer: this.props.answer});
+    }
+  }
   render() {
-    let modal;
-    if (this.state.open) {
-      modal = (
+    return (
         <div className="modal">
           {this.state.answer}
           <input
@@ -17,12 +21,8 @@ class Modal extends React.Component {
             value="Закрыть"
           />
         </div>
-      );
-    } else {
-      modal = "";
+      )
     }
-    return <div> {modal} </div>;
-  }
 }
 
 export default Modal;

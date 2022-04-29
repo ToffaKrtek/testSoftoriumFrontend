@@ -8,6 +8,8 @@ class UserForm extends React.Component {
     this.state = { name: "" };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.changeFunction = props.changeFunction;
+    this.handleCreateUser = props.handleCreateUser;
   }
   handleChange(event) {
     this.setState({ name: event.target.value });
@@ -18,9 +20,8 @@ class UserForm extends React.Component {
       name: this.state.name
     })
     .then((res) => {
-     console.log(res);
-    console.log(res.data);
-
+      this.changeFunction(res.data)
+      this.handleCreateUser();
     });
     event.preventDefault();
   }

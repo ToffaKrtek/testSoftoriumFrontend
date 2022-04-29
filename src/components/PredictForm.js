@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import Modal from './Modal';
 import API from "../API";
 class PredictForm extends React.Component {
   constructor(props) {
@@ -8,6 +7,7 @@ class PredictForm extends React.Component {
     this.state = { question: "", user_id: props.user_id };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChangeAnswer = props.handleChangeAnswer;
   }
   componentDidUpdate(prevProps){
     if (this.props.user_id !== this.state.user_id) {
@@ -27,9 +27,7 @@ class PredictForm extends React.Component {
 
       })
       .then((res) => {
-        console.log(res);
-        console.log(res.data);
-        <Modal answer={res.data.answer} open={true} />
+        this.handleChangeAnswer(res.data)
       });
     event.preventDefault();
   }
