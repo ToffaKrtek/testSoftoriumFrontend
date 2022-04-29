@@ -13,7 +13,7 @@ class Modal extends React.Component {
           {this.state.answer}
           <input
             type="button"
-            onClick={this.setState({ open: false })}
+            onClick={() => this.setState({ open: false })}
             value="Закрыть"
           />
         </div>

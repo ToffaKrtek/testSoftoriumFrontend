@@ -1,5 +1,7 @@
 import React from "react";
 import axios from "axios";
+import API from "../API";
+
 class UserForm extends React.Component {
   constructor(props) {
     super(props);
@@ -12,12 +14,13 @@ class UserForm extends React.Component {
   }
   handleSubmit(event) {
     axios
-    .post(`http://localhost:8100/UserController.php`, {
-    name: this.state.name
+    .post(`${axios.defaults.baseURL}/handlers/UserHandler.php`, {
+      name: this.state.name
     })
     .then((res) => {
      console.log(res);
     console.log(res.data);
+
     });
     event.preventDefault();
   }
