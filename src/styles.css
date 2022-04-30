@@ -1,0 +1,111 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  /* background-color: #232323; */
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+}
+body {
+  margin: 0;
+}
+Canvas {
+  background-color: #232323;
+}
+.form {
+  position:fixed;
+  background: #2c2c2c;
+  border:  thick double #1c1c1c;
+  box-shadow: 10px 5px 5px #161616;
+  color: white;
+  width: 80%;
+  height: auto;
+  top:50%;
+  left:50%;
+  padding: 1%;
+  transform: translate(-50%,-50%);
+}
+label:before
+{
+    padding-right: 2px;
+}
+label:after {
+  padding-right: 2px;
+}
+input {
+  padding: 3px;
+  box-shadow: 3px 3px 5px grey;
+  font-size: 14px;
+  font-weight: 600;
+}
+.button-submit
+{
+  background-color: #bb0e27;
+  color: white;
+}
+.modal1 {
+  display: none;
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+}
+
+.modal-active1 {
+  display: inline;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-main {
+  position:fixed;
+  background: #2c2c2c;
+  border: thick double #626161a3;
+  box-shadow: 10px 5px 5px #3c3939;
+  color: white;
+  width: 80%;
+  height: auto;
+  top:50%;
+  left:50%;
+  padding: 1%;
+  transform: translate(-50%,-50%);
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+.predicts {
+  position: fixed;
+  background: #2c2c2c;
+  border: thick double #626161a3;
+  box-shadow: 10px 5px 5px #3c3939;
+  color: white;
+  width: auto;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  padding: 3%;
+  transform: translate(-50%,-50%);
+  margin: 0%;
+}
+.predict-form {
+  position: relative;
+}
+.list-predict{
+  position: relative;
+}

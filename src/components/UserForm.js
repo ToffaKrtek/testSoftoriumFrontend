@@ -27,18 +27,21 @@ class UserForm extends React.Component {
   }
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Имя пользователя:
-          <input
-            type="text"
-            value={this.state.name}
-            name="name"
-            onChange={this.handleChange}
-          />
-        </label>
-        <input type="submit" value="Отправить" />
-      </form>
+      <div className="form">
+        <h3>Введите имя пользователя</h3>
+        <form onSubmit={this.handleSubmit} className="user-form">
+          <label>
+            Имя пользователя:
+            <input
+              type="text"
+              value={this.state.name}
+              name="name"
+              onChange={this.handleChange}
+            />
+          </label>
+          <input className="button-submit" type="submit" value="Отправить" />
+        </form>
+      </div>
     );
   }
 }

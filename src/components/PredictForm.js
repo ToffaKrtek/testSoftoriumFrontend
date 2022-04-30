@@ -33,18 +33,21 @@ class PredictForm extends React.Component {
   }
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Вопрос:
-          <input
-            type="text"
-            value={this.state.question}
-            name="question"
-            onChange={this.handleChange}
-          />
-        </label>
-        <input type="submit" value="Отправить" />
-      </form>
+      <div className=" predict-form">
+        <h3>Задайте вопрос</h3>
+        <form onSubmit={this.handleSubmit} className="">
+          <label>
+            Вопрос:
+            <input
+              type="text"
+              value={this.state.question}
+              name="question"
+              onChange={this.handleChange}
+            />
+          </label>
+          <input className="button-submit" type="submit" value="Отправить" />
+        </form>
+      </div>
     );
   }
 }
