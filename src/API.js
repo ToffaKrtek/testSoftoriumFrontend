@@ -5,5 +5,5 @@ var axios = require('axios');
 PROTOCOL = "http:";
 URL = "localhost";
 //PORT = location.port == 80 ? '' : ":" + location.port;
-PORT = ":8100";
+PORT = ":80";
 axios.defaults.baseURL = PROTOCOL+'//'+ URL + PORT;
