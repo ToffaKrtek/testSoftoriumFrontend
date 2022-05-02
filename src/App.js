@@ -6,20 +6,25 @@ import "./styles.css";
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { user_id: null, new_user: true, reload: false };
-    if(props.user != "null"){
-      console.log(props.user)
-      this.setState({user_id: props.user, new_user: false,
-                    answer: "", openModal: false, reload: false});
-    }
+    this.state = { user_id: null, new_user: true, answer: "", openModal: false, reload: false };
+    console.log("constructor")
     this.handleChange = this.handleChange.bind(this);
     this.handleChangeAnswer = this.handleChangeAnswer.bind(this);
     this.hideModal = this.hideModal.bind(this);
     this.didReload = this.didReload.bind(this);
   }
 
+  componentDidMount(){
+    if( window.sessionStorage.getItem("user_id")){
+      const get_user_id =  window.sessionStorage.getItem("user_id");
+      this.setState({user_id: get_user_id, new_user: false});
+      console.log("componentDidMount")
+    }
+  }
+
   handleChange(data){
-    this.setState({isNewUser:  false, user_id: data.user_id, name: data.name})
+    this.setState({new_user: false, user_id: data.user_id, name: data.name})
+    window.sessionStorage.setItem("user_id", data.user_id);
   }
   handleChangeAnswer(data){
     this.setState({openModal:  true, answer: data.answer, reload: true})

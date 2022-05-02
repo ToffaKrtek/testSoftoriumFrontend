@@ -70,10 +70,10 @@ input {
 
 .modal-main {
   position:fixed;
-  background: #2c2c2c;
+  background: white;
   border: thick double #626161a3;
   box-shadow: 10px 5px 5px #3c3939;
-  color: white;
+  color: black;
   width: 80%;
   height: auto;
   top:50%;

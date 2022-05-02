@@ -8,7 +8,7 @@ import ListPredicts from './ListPredicts'
 class SwitchForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {isNewUser:  props.new_user, user_id: props.user_id, reload: props.reload};
+    this.state = {new_user:  props.new_user, user_id: props.user_id, reload: props.reload};
     this.changeFunction = props.changeFunction;
     this.handleChangeAnswer = props.handleChangeAnswer;
     this.didReload = props.didReload;
@@ -16,12 +16,12 @@ class SwitchForm extends React.Component {
     this.user_id = props.user_id;
   }
   componentDidUpdate(prevProps){
-    if (this.props.isNewUser !== this.state.isNewUser || this.props.user_id !== this.state.user_id || this.props.reload !== this.state.reload) {
-      this.setState({isNewUser: this.props.isNewUser, user_id: this.props.user_id, reload: this.props.reload});
+    if (this.props.new_user !== this.state.new_user || this.props.user_id !== this.state.user_id || this.props.reload !== this.state.reload) {
+      this.setState({new_user: this.props.new_user, user_id: this.props.user_id, reload: this.props.reload});
     }
   }
   handleCreateUser() {
-    this.setState({isNewUser: true});
+    this.setState({new_user: false});
   }
 
   render() {
@@ -32,7 +32,7 @@ class SwitchForm extends React.Component {
           <ListPredicts user_id={this.state.user_id} reload={this.state.reload}  handleChangeAnswer={this.handleChangeAnswer} didReload={this.didReload} />
       </div>,
     ];
-    const correctForm = forms[this.state.isNewUser ? 0 : 1];
+    const correctForm = forms[this.state.new_user ? 0 : 1];
     return (
       <div className="switch-container">
        {correctForm}
